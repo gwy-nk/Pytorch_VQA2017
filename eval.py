@@ -64,7 +64,7 @@ def vqaeval(args):
         print('Validating MScoco model')
         quesFile = './data/coco/raw/v2_OpenEnded_mscoco_val2014_questions.json'
         annFile = './data/coco/raw/v2_mscoco_val2014_annotations.json'
-    if args.jsoneval():
+    if args.jsoneval:
         resFile = args.savedmodel
     else:
         resFile = args.savedmodel + 'result.json'
@@ -82,7 +82,7 @@ if __name__ == '__main__':
     parser.add_argument('--savedmodel', type=str, help='saved model path')
     parser.add_argument('--jsoneval',default=False,action='store_true')
     parser.add_argument('--imgf_path', type=str, help='saved image feature path', default=None)
-    parser.add_argument('--Abstract',default=False, action='store_true')
+    parser.add_argument('--abstract',default=False, action='store_true')
     args, unparsed = parser.parse_known_args()
 
     if args.jsoneval:
